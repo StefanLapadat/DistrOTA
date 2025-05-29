@@ -12,7 +12,7 @@ Example with 10 peers:
 
 ![image](https://github.com/user-attachments/assets/541fe214-b3ed-485a-a304-0b0a9c95455e)
 
-The code is setup to simulate each host sending 1200 events (each of them is ~300 bytes message) per second to its peers (including signing messages using private/public keys for integrity checks and fraud prevention). This load corresponds to having 10 milion properties in the system firing an event (reservation made, availability change, price change) aproximatelly once in 3 hours, which would be more than enough for real world scenario. When we run this system on a local machine 8GB ram, Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz, we can see that simulating synchronization changes of whole world properties takes only about 3% of CPU (per host). 
+The code is setup to simulate each host sending 1200 events (each of them is ~300 bytes protobuf message which include propertyid - identifier of the property on which the change has happened, and some dummy fields) per second to its peers (including signing messages using private/public keys for integrity checks and fraud prevention). This load corresponds to having 10 milion properties in the system firing an event (reservation made, availability change, price change) aproximatelly once in 3 hours, which would be more than enough for real world scenario. When we run this system on a local machine 8GB ram, Intel(R) Core(TM) i7-8565U CPU @ 1.80GHz, we can see that simulating synchronization changes of whole world properties takes only about 3% of CPU (per host). 
 
 ![image](https://github.com/user-attachments/assets/b8962ec0-b35d-4172-8d5c-acfc08c8aa34)
 
