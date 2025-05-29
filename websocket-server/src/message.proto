@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package ota_integration;
+
+message Instruction {
+    uint64 property_id = 1;
+    uint32 message_id = 2;
+    uint64 somecnt1 = 3;
+    uint64 somecnt2 = 4;
+    uint64 somecnt3 = 5;
+    uint64 somecnt4 = 6;
+}
+
+message InstructionBatch {
+    repeated Instruction instructions = 1;
+    bytes signature = 2;
+}
